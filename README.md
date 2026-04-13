@@ -18,22 +18,20 @@ This repository contains a starter implementation for an autonomy-style project 
 - `configs/`: YAML config files
 - `scripts/`: entry-point scripts
 
-## First milestone
+## First runnable milestone
 
-1. Parse Waymo data into usable point clouds / scene tensors
-2. Run a lightweight LiDAR odometry baseline
-3. Save trajectories and maps
-4. Train a simple future trajectory predictor
+1. Run a synthetic LiDAR sequence through the SLAM frontend
+2. Produce and visualize an estimated trajectory
+3. Keep the planning model stub ready for future trajectory prediction
+4. Extend the data layer to real Waymo TFRecords next
 
-## Status
+## Current repo contents
 
-This is the initial scaffold. The current version includes:
-
-- project folder layout
-- placeholder config files
-- Python package structure
-- starter scripts
-- baseline interfaces for SLAM and planning
+- lightweight project structure
+- synthetic LiDAR dataset for development without Waymo files
+- ICP-based LiDAR odometry baseline using Open3D
+- runnable SLAM demo script
+- starter planning model in PyTorch
 
 ## Suggested setup
 
@@ -41,6 +39,7 @@ This is the initial scaffold. The current version includes:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+python scripts/run_slam.py
 ```
 
 ## Notes
